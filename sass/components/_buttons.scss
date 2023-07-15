@@ -1,0 +1,108 @@
+
+.btn {
+    &,  //.btn,
+    &:link,
+    &:visited {
+ 
+     display: inline-block;
+     text-decoration: none;
+     text-transform:uppercase;
+     padding: 1.5rem 1.4rem;
+     border-radius: 10rem;
+     font-size: 1.6rem;
+     position: relative;
+     border: none;
+     cursor: pointer;
+ 
+     transition: all 0.2s; 
+     
+     
+  } 
+ 
+  &:hover{
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+     transform: translateY(-0.3rem);
+     
+     
+  }
+ 
+   &:active{
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     transform: translateY(-0.1rem);
+     
+  }
+   
+   &--white {
+     color:$color-gray-dark;
+     background-color: $color-white;
+     &::after{
+      background-color: #fff;
+   }
+  }
+
+  &--green{
+     color: $color-white;
+     background-color: $color-primary;
+     &::after{
+      background-color: $color-primary;
+   }
+  }
+ 
+   &::after {
+      
+     content: ""; //حتما باید نوشته شود حتی اگر خالی باشد
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      z-index: -1;
+      transition: all 1s;
+      position: absolute;
+      top: 0;
+      left:0;
+     
+  }
+ 
+    
+ 
+     &:hover::after{
+     opacity: 0;
+     transform: scaleX(1.4) scaleY(1.6); 
+ 
+  }
+ 
+    &--animated{
+     animation-name: moveInBottom;
+     animation-duration: 1s;
+     animation-timing-function: ease-in-out;
+  }
+ 
+ }
+
+ .btn-text{
+    &:link,
+    &:visited{
+       font-size: 1.6rem;
+       color: $color-primary;
+       display: inline-block;
+       text-decoration: none;
+       border-bottom: 1px solid $color-primary;
+       padding: 1rem;
+
+       transition: all 0.2s;
+
+    }
+    &:hover{
+       background-color: $color-primary;
+       color: $color-white;
+       transform: translateY(-0.2rem);
+       box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    }
+
+    &:active{
+       transform: translateY(0);
+       box-shadow: 0 0.5rem 2rem rgba($color-black, 0.15) ;
+    }
+ }
+
+
